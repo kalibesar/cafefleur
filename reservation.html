@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Réservation - caféfleur</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="reservation.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="nav_logo">
+                <a href="index.html">
+                    <img src="logo.png" alt="Coffee Logo">
+                </a>
+            </div>
+
+            <input type="checkbox" id="click">
+            <label for="click">
+                <i class='menu_btn bx bx-menu'></i>
+                <i class='close_btn bx bx-x-circle'></i>
+            </label>
+
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="#about">Histoire</a></li>
+                <li><a href="#service">Boutique</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="reservation-form">
+            <h1>Réservez une table</h1>
+            <form action="submit_reservation.php" method="POST">
+                <fieldset>
+                    <legend>Informations de Réservation</legend>
+                    <div class="form-group">
+                        <label for="name">Nom:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Téléphone:</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Date:</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="time">Heure:</label>
+                        <input type="time" id="time" name="time" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="guests">Nombre de personnes:</label>
+                        <input type="number" id="guests" name="guests" min="1" max="10" required>
+                    </div>
+                    <button type="submit">Réserver</button>
+                </fieldset>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <div class="section_container">
+            <div class="footer_section">
+                <div class="footer_logo">
+                    <a href="index.html">
+                        <img src="logo.png" alt="Coffee Logo">
+                    </a>
+                </div>
+
+                <div class="useful_links">
+                    <h3>Liens utiles</h3>
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="#about">Histoire</a></li>
+                        <li><a href="#service">Boutique</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="contact_us">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li><i class='bx bx-current-location'></i> <span>138 Rue Busleyden 1000 Brussel
+                            </span></li>
+                        <li><i class='bx bxs-phone-call'></i> <span>0494246993</span></li>
+                        <li><i class='bx bxs-time-five'></i> <span>Lun-Sam : 10:00 AM - 7:00 PM</span></li>
+                    </ul>
+                </div>
+
+                <div class="follow_us">
+                    <h3>Follow</h3>
+                    <i class='bx bxl-facebook-circle'></i>
+                    <i class='bx bxl-twitter'></i>
+                    <i class='bx bxl-instagram-alt'></i>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 Besar Kali. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const menu = document.querySelector('.menu');
+        function toggleNav(isOpen) {
+            if (isOpen) {
+                menu.classList.add('open');
+            } else {
+                menu.classList.remove('open');
+            }
+        }
+    </script>
+</body>
+
+</html>
