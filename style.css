@@ -12,7 +12,7 @@
 :root {
     /* Colors */
     --primary-color: #a67b5b;
-    --secondary-color: #efe6dd;
+    --secondary-color: #6D3F21;
 
     /* Website Max-Width */
     --site-max-width: 1300px;
@@ -151,7 +151,7 @@ label .close_btn {
 
 .hero_container .text_section h2 {
     font-size: 40px;
-    color: var(--secondary-color);
+    color: #fff;
 }
 
 .hero_container .text_section h3 {
