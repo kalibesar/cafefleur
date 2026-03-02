@@ -34,8 +34,33 @@
                 <li><a href="#gallery">Gallery</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+
+            <!-- Cart Icon in Navbar -->
+            <div class="cart_icon" onclick="toggleCart()">
+                <i class='bx bx-cart'></i>
+                <span class="cart_count" id="cart_count">0</span>
+            </div>
         </nav>
     </header>
+
+    <!-- Cart Sidebar -->
+    <div class="cart_sidebar" id="cart_sidebar">
+        <div class="cart_header">
+            <h3>🛒 Mon Panier</h3>
+            <i class='bx bx-x close_cart' onclick="toggleCart()"></i>
+        </div>
+        <div class="cart_items" id="cart_items">
+            <p class="empty_cart">Votre panier est vide.</p>
+        </div>
+        <div class="cart_footer">
+            <div class="cart_total">
+                <span>Total :</span>
+                <span id="cart_total">0,00 €</span>
+            </div>
+            <button class="button cart_checkout">Commander</button>
+        </div>
+    </div>
+    <div class="cart_overlay" id="cart_overlay" onclick="toggleCart()"></div>
 
     <!-- Hero Section -->
     <section class="hero_section">
@@ -44,8 +69,8 @@
                 <div class="text_section">
                     <h2>Bienvenue au Café Fleur:</h2>
                     <h3>Découvrez la magie dans chaque tasse</h3>
-                    <p>Un lieu où l’arôme du café rencontre la douceur des fleurs.
-                        Installez-vous et profitez d’un moment simple et chaleureux.</p>
+                    <p>Un lieu où l'arôme du café rencontre la douceur des fleurs.
+                        Installez-vous et profitez d'un moment simple et chaleureux.</p>
 
                     <div class="hero_section_button">
                         <a href="menucafefleur.pdf" class="button" target="_blank">
@@ -72,7 +97,7 @@
                         Des années 1900 jusqu'aux années 1970
 
                         Au début du 20e siècle, le café est utilisé principalement comme une commodité
-                        permettant de «générer» un gain d’énergie le matin et de rester éveillé au courant de la
+                        permettant de «générer» un gain d'énergie le matin et de rester éveillé au courant de la
                         journée.
                         Ce sentiment est accentué lors des deux guerres mondiales,
                         où les soldats buvaient de grosses quantités de café afin de rester éveillés dans les tranchées.
@@ -95,42 +120,66 @@
                     <img src="2025-06-10_192406-removebg-preview.png" alt="Hot Beverages">
                     <div class="services_text">
                         <h3>Tamper</h3>
-                        <p>Tamper.</p>
+                        <p class="product_desc">Tamper.</p>
+                        <p class="product_price">24,99 €</p>
+                        <button class="button add_to_cart" onclick="addToCart('Tamper', 24.99)">
+                            <i class='bx bx-cart-add'></i> Ajouter
+                        </button>
                     </div>
                 </div>
                 <div class="services_items">
                     <img src="2025-06-17_211222-removebg-preview (1).png" alt="Cold Beverages">
                     <div class="services_text">
                         <h3>Knock Box</h3>
-                        <p>Knock Box.</p>
+                        <p class="product_desc">Knock Box.</p>
+                        <p class="product_price">19,99 €</p>
+                        <button class="button add_to_cart" onclick="addToCart('Knock Box', 19.99)">
+                            <i class='bx bx-cart-add'></i> Ajouter
+                        </button>
                     </div>
                 </div>
                 <div class="services_items">
                     <img src="2025-06-17_143156-removebg-preview.png" alt="Refreshment">
                     <div class="services_text">
-                        <h3>Pichet a lait</h3>
-                        <p>Pichet a lait.</p>
+                        <h3>Pichet à lait</h3>
+                        <p class="product_desc">Pichet à lait.</p>
+                        <p class="product_price">12,99 €</p>
+                        <button class="button add_to_cart" onclick="addToCart('Pichet à lait', 12.99)">
+                            <i class='bx bx-cart-add'></i> Ajouter
+                        </button>
                     </div>
                 </div>
                 <div class="services_items">
                     <img src="2025-06-17_145118-removebg-preview.png" alt="Special Combos">
                     <div class="services_text">
                         <h3>Gobelet Café Fleur</h3>
-                        <p>Gobelet Café Fleur en Carton.</p>
+                        <p class="product_desc">Gobelet Café Fleur en Carton.</p>
+                        <p class="product_price">8,99 €</p>
+                        <button class="button add_to_cart" onclick="addToCart('Gobelet Café Fleur', 8.99)">
+                            <i class='bx bx-cart-add'></i> Ajouter
+                        </button>
                     </div>
                 </div>
                 <div class="services_items">
                     <img src="2025-06-17_210335-removebg-preview.png" alt="Burger & French Fries">
                     <div class="services_text">
                         <h3>Petit-pichet</h3>
-                        <p>Petit-pichet pour caffé au lait</p>
+                        <p class="product_desc">Petit-pichet pour café au lait.</p>
+                        <p class="product_price">9,99 €</p>
+                        <button class="button add_to_cart" onclick="addToCart('Petit-pichet', 9.99)">
+                            <i class='bx bx-cart-add'></i> Ajouter
+                        </button>
                     </div>
                 </div>
                 <div class="services_items">
                     <img src="2025-06-17_204748-removebg-preview.png" alt="Desserts">
                     <div class="services_text">
-                        <h3>Brosse de teflon</h3>
-                        <p>Brosse de teflon.</p>
+                        <h3>Brosse de téflon</h3>
+                        <p class="product_desc">Brosse de téflon.</p>
+                        <p class="product_price">6,99 €</p>
+                        <button class="button add_to_cart" onclick="addToCart('Brosse de téflon', 6.99)">
+                            <i class='bx bx-cart-add'></i> Ajouter
+                        </button>
                     </div>
                 </div>
             </div>
@@ -269,6 +318,81 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        let cart = [];
+
+        function addToCart(name, price) {
+            const existing = cart.find(item => item.name === name);
+            if (existing) {
+                existing.qty++;
+            } else {
+                cart.push({ name, price, qty: 1 });
+            }
+            updateCart();
+            openCart();
+        }
+
+        function removeFromCart(name) {
+            cart = cart.filter(item => item.name !== name);
+            updateCart();
+        }
+
+        function changeQty(name, delta) {
+            const item = cart.find(i => i.name === name);
+            if (item) {
+                item.qty += delta;
+                if (item.qty <= 0) removeFromCart(name);
+                else updateCart();
+            }
+        }
+
+        function updateCart() {
+            const cartItems = document.getElementById('cart_items');
+            const cartCount = document.getElementById('cart_count');
+            const cartTotal = document.getElementById('cart_total');
+
+            const totalQty = cart.reduce((sum, i) => sum + i.qty, 0);
+            const totalPrice = cart.reduce((sum, i) => sum + i.price * i.qty, 0);
+
+            cartCount.textContent = totalQty;
+            cartTotal.textContent = totalPrice.toFixed(2).replace('.', ',') + ' €';
+
+            if (cart.length === 0) {
+                cartItems.innerHTML = '<p class="empty_cart">Votre panier est vide.</p>';
+                return;
+            }
+
+            cartItems.innerHTML = cart.map(item => `
+                <div class="cart_item">
+                    <div class="cart_item_info">
+                        <span class="cart_item_name">${item.name}</span>
+                        <span class="cart_item_price">${(item.price * item.qty).toFixed(2).replace('.', ',')} €</span>
+                    </div>
+                    <div class="cart_item_controls">
+                        <button onclick="changeQty('${item.name}', -1)">−</button>
+                        <span>${item.qty}</span>
+                        <button onclick="changeQty('${item.name}', 1)">+</button>
+                        <i class='bx bx-trash' onclick="removeFromCart('${item.name}')"></i>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function toggleCart() {
+            const sidebar = document.getElementById('cart_sidebar');
+            const overlay = document.getElementById('cart_overlay');
+            sidebar.classList.toggle('open');
+            overlay.classList.toggle('open');
+        }
+
+        function openCart() {
+            const sidebar = document.getElementById('cart_sidebar');
+            const overlay = document.getElementById('cart_overlay');
+            sidebar.classList.add('open');
+            overlay.classList.add('open');
+        }
+    </script>
 </body>
 
 </html>

@@ -4,69 +4,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Réservation - caféfleur</title>
+    <title>Réservation - Café Fleur</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="reservation.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
 <body>
+
     <header>
         <nav>
             <div class="nav_logo">
-                <a href="index.html">
-                    <img src="logo.png" alt="Coffee Logo">
-                </a>
+                <a href="index.html"><img src="logo.png" alt="Coffee Logo"></a>
             </div>
-
             <input type="checkbox" id="click">
             <label for="click">
                 <i class='menu_btn bx bx-menu'></i>
                 <i class='close_btn bx bx-x-circle'></i>
             </label>
-
             <ul>
                 <li><a href="index.html">Accueil</a></li>
-                <li><a href="#about">Histoire</a></li>
-                <li><a href="#service">Boutique</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="index.html#about">Histoire</a></li>
+                <li><a href="index.html#service">Boutique</a></li>
+                <li><a href="index.html#gallery">Gallery</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <main class="container">
-        <div class="reservation-form">
-            <h1>Réservez une table</h1>
-            <form action="submit_reservation.php" method="POST">
-                <fieldset>
-                    <legend>Informations de Réservation</legend>
-                    <div class="form-group">
-                        <label for="name">Nom:</label>
-                        <input type="text" id="name" name="name" required>
+    <!-- Bannière -->
+    <div class="reservation_hero">
+        <div class="reservation_hero_overlay">
+            <h1>Réservez votre table</h1>
+            <p>Un moment chaleureux vous attend au Café Fleur</p>
+        </div>
+    </div>
+
+    <main class="reservation_main">
+        <div class="reservation_wrapper">
+
+            <!-- Panneau info gauche -->
+            <div class="reservation_info">
+                <h2>Informations pratiques</h2>
+                <div class="info_item">
+                    <i class='bx bx-current-location'></i>
+                    <div>
+                        <h4>Adresse</h4>
+                        <p>138 Rue Busleyden<br>1000 Bruxelles</p>
                     </div>
-                    <div class="form-group">
-                        <label for="email">Email:</label>
-                        <input type="email" id="email" name="email" required>
+                </div>
+                <div class="info_item">
+                    <i class='bx bxs-time-five'></i>
+                    <div>
+                        <h4>Horaires</h4>
+                        <p>Lundi – Samedi<br>10:00 – 19:00</p>
                     </div>
-                    <div class="form-group">
-                        <label for="phone">Téléphone:</label>
-                        <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="info_item">
+                    <i class='bx bxs-phone-call'></i>
+                    <div>
+                        <h4>Téléphone</h4>
+                        <p>0494 24 69 93</p>
                     </div>
-                    <div class="form-group">
-                        <label for="date">Date:</label>
-                        <input type="date" id="date" name="date" required>
+                </div>
+                <div class="info_item">
+                    <i class='bx bxs-envelope'></i>
+                    <div>
+                        <h4>Email</h4>
+                        <p>caféfleur@gmail.com</p>
                     </div>
-                    <div class="form-group">
-                        <label for="time">Heure:</label>
-                        <input type="time" id="time" name="time" required>
+                </div>
+                <div class="info_note">
+                    <i class='bx bxs-info-circle'></i>
+                    <p>Les réservations sont confirmées par email dans les 24h. Pour les groupes de plus de 8 personnes,
+                        veuillez nous contacter directement.</p>
+                </div>
+            </div>
+
+            <!-- Formulaire droite -->
+            <div class="reservation_form_panel">
+                <h2>Votre réservation</h2>
+                <form action="submit_reservation.php" method="POST" class="reservation_form">
+                    <div class="form_row">
+                        <div class="form_group">
+                            <label for="name"><i class='bx bx-user'></i> Nom complet</label>
+                            <input type="text" id="name" name="name" placeholder="Votre nom" required>
+                        </div>
+                        <div class="form_group">
+                            <label for="phone"><i class='bx bx-phone'></i> Téléphone</label>
+                            <input type="tel" id="phone" name="phone" placeholder="0494 00 00 00" required>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="guests">Nombre de personnes:</label>
-                        <input type="number" id="guests" name="guests" min="1" max="10" required>
+                    <div class="form_group full">
+                        <label for="email"><i class='bx bx-envelope'></i> Adresse email</label>
+                        <input type="email" id="email" name="email" placeholder="votre@email.com" required>
                     </div>
-                    <button type="submit">Réserver</button>
-                </fieldset>
-            </form>
+                    <div class="form_row">
+                        <div class="form_group">
+                            <label for="date"><i class='bx bx-calendar'></i> Date</label>
+                            <input type="date" id="date" name="date" required>
+                        </div>
+                        <div class="form_group">
+                            <label for="time"><i class='bx bx-time'></i> Heure</label>
+                            <input type="time" id="time" name="time" min="10:00" max="18:30" required>
+                        </div>
+                    </div>
+                    <div class="form_group full">
+                        <label for="guests"><i class='bx bx-group'></i> Nombre de personnes</label>
+                        <div class="guests_selector">
+                            <button type="button" class="guests_btn" onclick="changeGuests(-1)">−</button>
+                            <input type="number" id="guests" name="guests" value="2" min="1" max="10" readonly>
+                            <button type="button" class="guests_btn" onclick="changeGuests(1)">+</button>
+                        </div>
+                    </div>
+                    <div class="form_group full">
+                        <label for="message"><i class='bx bx-comment'></i> Message (optionnel)</label>
+                        <textarea id="message" name="message"
+                            placeholder="Allergies, occasion spéciale, demandes particulières..."></textarea>
+                    </div>
+                    <button type="submit" class="submit_btn">
+                        <i class='bx bx-check-circle'></i> Confirmer la réservation
+                    </button>
+                </form>
+            </div>
+
         </div>
     </main>
 
@@ -74,32 +135,26 @@
         <div class="section_container">
             <div class="footer_section">
                 <div class="footer_logo">
-                    <a href="index.html">
-                        <img src="logo.png" alt="Coffee Logo">
-                    </a>
+                    <a href="index.html"><img src="logo.png" alt="Coffee Logo"></a>
                 </div>
-
                 <div class="useful_links">
                     <h3>Liens utiles</h3>
                     <ul>
                         <li><a href="index.html">Accueil</a></li>
-                        <li><a href="#about">Histoire</a></li>
-                        <li><a href="#service">Boutique</a></li>
-                        <li><a href="#gallery">Gallery</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="index.html#about">Histoire</a></li>
+                        <li><a href="index.html#service">Boutique</a></li>
+                        <li><a href="index.html#gallery">Gallery</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
                     </ul>
                 </div>
-
                 <div class="contact_us">
                     <h3>Contact</h3>
                     <ul>
-                        <li><i class='bx bx-current-location'></i> <span>138 Rue Busleyden 1000 Brussel
-                            </span></li>
+                        <li><i class='bx bx-current-location'></i> <span>138 Rue Busleyden 1000 Brussel</span></li>
                         <li><i class='bx bxs-phone-call'></i> <span>0494246993</span></li>
                         <li><i class='bx bxs-time-five'></i> <span>Lun-Sam : 10:00 AM - 7:00 PM</span></li>
                     </ul>
                 </div>
-
                 <div class="follow_us">
                     <h3>Follow</h3>
                     <i class='bx bxl-facebook-circle'></i>
@@ -114,14 +169,15 @@
     </footer>
 
     <script>
-        const menu = document.querySelector('.menu');
-        function toggleNav(isOpen) {
-            if (isOpen) {
-                menu.classList.add('open');
-            } else {
-                menu.classList.remove('open');
-            }
+        function changeGuests(delta) {
+            const input = document.getElementById('guests');
+            let val = parseInt(input.value) + delta;
+            if (val < 1) val = 1;
+            if (val > 10) val = 10;
+            input.value = val;
         }
+        const dateInput = document.getElementById('date');
+        dateInput.setAttribute('min', new Date().toISOString().split('T')[0]);
     </script>
 </body>
 
