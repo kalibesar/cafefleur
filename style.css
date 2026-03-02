@@ -170,7 +170,7 @@ label .close_btn {
     height: 100vh;
     background: #fff;
     z-index: 999;
-    box-shadow: -4px 0 20px rgba(0,0,0,0.15);
+    box-shadow: -4px 0 20px rgba(0, 0, 0, 0.15);
     display: flex;
     flex-direction: column;
     transition: right 0.4s ease;
@@ -184,7 +184,7 @@ label .close_btn {
     display: none;
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,0.4);
+    background: rgba(0, 0, 0, 0.4);
     z-index: 998;
 }
 
@@ -386,19 +386,30 @@ label .close_btn {
 }
 
 .about_container .text_section p {
-    font-size: 18px;
-    font-weight: 500;
-    letter-spacing: 1px;
-    line-height: 30px;
-    text-align: center;
+    font-size: 17px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    line-height: 32px;
+    text-align: justify;
+    color: #4a3728;
+    font-style: italic;
 }
 
 .about_container .image_section {
     max-width: 45%;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(109, 63, 33, 0.2);
 }
 
 .about_container .image_section img {
     width: 100%;
+    transition: transform 0.5s ease;
+    display: block;
+}
+
+.about_container .image_section img:hover {
+    transform: scale(1.05);
 }
 
 /* Services Section */
@@ -417,12 +428,14 @@ label .close_btn {
 }
 
 .section_container .services_items img {
-    width: 100%;
+    width: 75%;
+    margin: 0 auto;
+    display: block;
 }
 
 .section_container .services_items {
     width: calc(100% / 3 - 32px);
-    background: rgba(255,255,255,0.08);
+    background: rgba(255, 255, 255, 0.08);
     border-radius: 12px;
     padding: 16px;
     display: flex;
@@ -432,7 +445,7 @@ label .close_btn {
 
 .section_container .services_items:hover {
     transform: translateY(-4px);
-    background: rgba(255,255,255,0.14);
+    background: rgba(255, 255, 255, 0.14);
 }
 
 .services_items .services_text {
@@ -491,6 +504,18 @@ label .close_btn {
 .gallery .gallery_container img {
     width: 100%;
     border-radius: 8px;
+    transition: transform 0.5s ease;
+    display: block;
+}
+
+.gallery_container .gallery_items {
+    width: calc(100% / 3 - 32px);
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.gallery_container .gallery_items:hover img {
+    transform: scale(1.05);
 }
 
 .gallery_container .gallery_items {
