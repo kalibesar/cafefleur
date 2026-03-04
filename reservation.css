@@ -1,8 +1,7 @@
-/* Hero Banner */
 .reservation_hero {
     margin-top: 80px;
     height: 280px;
-    background: var(--primary-color);
+    background: #6D3F21;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -14,7 +13,7 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: radial-gradient(ellipse at center, rgba(109, 63, 33, 0.5) 0%, transparent 70%);
+    background: radial-gradient(ellipse at center, rgba(61, 32, 16, 0.55) 0%, transparent 70%);
 }
 
 .reservation_hero_overlay {
@@ -25,17 +24,21 @@
 }
 
 .reservation_hero_overlay h1 {
-    font-family: "Righteous", sans-serif;
-    font-size: 48px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 52px;
+    font-weight: 300;
+    font-style: italic;
+    letter-spacing: 3px;
     margin-bottom: 12px;
+    color: #fff;
 }
 
 .reservation_hero_overlay p {
-    font-size: 20px;
-    font-weight: 500;
-    opacity: 0.9;
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.75);
 }
 
 /* Main layout */
@@ -53,25 +56,29 @@
     align-items: flex-start;
 }
 
-/* Info Panel */
+/* ---- Info Panel (gauche) ---- */
 .reservation_info {
-    background: var(--secondary-color);
+    background: #6D3F21;
     color: #fff;
-    border-radius: 16px;
     padding: 40px 32px;
     width: 340px;
     flex-shrink: 0;
     position: sticky;
     top: 100px;
+    border-radius: 0;
+    border-top: 3px solid #a67b5b;
 }
 
 .reservation_info h2 {
-    font-family: "Righteous", sans-serif;
-    font-size: 22px;
-    text-transform: uppercase;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    font-weight: 400;
+    font-style: italic;
+    letter-spacing: 1px;
+    color: #fff;
     margin-bottom: 32px;
     padding-bottom: 16px;
-    border-bottom: 3px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
 }
 
 .info_item {
@@ -82,72 +89,77 @@
 }
 
 .info_item i {
-    font-size: 26px;
-    color: #f5d9b0;
+    font-size: 24px;
+    color: #e8d5b0;
     flex-shrink: 0;
     margin-top: 2px;
 }
 
 .info_item h4 {
-    font-size: 14px;
+    font-size: 10px;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    opacity: 0.75;
-    margin-bottom: 4px;
+    letter-spacing: 2.5px;
+    color: #e8d5b0;
+    margin-bottom: 5px;
+    font-weight: 400;
 }
 
 .info_item p {
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 1.5;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.7;
+    color: #fff;
 }
 
 .info_note {
     display: flex;
     gap: 12px;
     align-items: flex-start;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.2);
+    border-left: 2px solid #a67b5b;
     padding: 16px;
     margin-top: 16px;
 }
 
 .info_note i {
-    font-size: 22px;
-    color: #f5d9b0;
+    font-size: 20px;
+    color: #e8d5b0;
     flex-shrink: 0;
     margin-top: 2px;
 }
 
 .info_note p {
-    font-size: 14px;
-    line-height: 1.6;
-    opacity: 0.9;
+    font-size: 13px;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.85);
+    font-weight: 300;
 }
 
-/* Form Panel */
+/* ---- Form Panel (droite) ---- */
 .reservation_form_panel {
     flex: 1;
     background: #fff;
-    border-radius: 16px;
-    padding: 40px;
-    box-shadow: 0 8px 32px rgba(109, 63, 33, 0.1);
+    padding: 44px 40px;
+    box-shadow: 0 4px 32px rgba(109, 63, 33, 0.12);
+    border-top: 3px solid #6D3F21;
 }
 
 .reservation_form_panel h2 {
-    font-family: "Righteous", sans-serif;
-    font-size: 26px;
-    color: var(--secondary-color);
-    text-transform: uppercase;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: 400;
+    font-style: italic;
+    color: #6D3F21;
+    letter-spacing: 1px;
     margin-bottom: 32px;
     padding-bottom: 16px;
-    border-bottom: 3px solid #efe6dd;
+    border-bottom: 1px solid #efe6dd;
 }
 
 .reservation_form {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 22px;
 }
 
 .form_row {
@@ -167,69 +179,101 @@
 }
 
 .form_group label {
-    font-size: 15px;
-    font-weight: 600;
-    color: #555;
+    font-family: 'Jost', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: #6D3F21;
     display: flex;
     align-items: center;
     gap: 6px;
 }
 
 .form_group label i {
-    color: var(--primary-color);
-    font-size: 18px;
+    color: #a67b5b;
+    font-size: 16px;
 }
 
 .form_group input,
 .form_group textarea {
-    padding: 12px 16px;
-    border: 2px solid #e8ddd6;
-    border-radius: 10px;
-    font-size: 16px;
-    font-family: "Inter", sans-serif;
-    color: #333;
+    padding: 13px 16px;
+    border: 1.5px solid #d4c4b8;
+    border-radius: 0;
+    font-size: 15px;
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    color: #3D2010;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
     outline: none;
     background: #fdfaf8;
     width: 100%;
 }
 
+.form_group input::placeholder,
+.form_group textarea::placeholder {
+    color: #b8a090;
+    font-style: italic;
+}
+
 .form_group input:focus,
 .form_group textarea:focus {
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 4px rgba(166, 123, 91, 0.12);
+    border-color: #6D3F21;
+    box-shadow: 0 0 0 3px rgba(109, 63, 33, 0.08);
     background: #fff;
+    color: #3D2010;
+}
+
+/* Date & time input color fix */
+.form_group input[type="date"],
+.form_group input[type="time"] {
+    color: #3D2010;
+    cursor: pointer;
+}
+
+.form_group input[type="date"]::-webkit-calendar-picker-indicator,
+.form_group input[type="time"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    opacity: 0.6;
+    filter: invert(25%) sepia(30%) saturate(500%) hue-rotate(340deg);
 }
 
 .form_group textarea {
     height: 120px;
     resize: vertical;
+    line-height: 1.7;
 }
 
 /* Guests selector */
 .guests_selector {
     display: flex;
     align-items: center;
-    gap: 0;
-    border: 2px solid #e8ddd6;
-    border-radius: 10px;
+    border: 1.5px solid #d4c4b8;
     overflow: hidden;
     background: #fdfaf8;
     width: fit-content;
+    transition: border-color 0.3s ease;
+}
+
+.guests_selector:focus-within {
+    border-color: #6D3F21;
 }
 
 .guests_selector input[type="number"] {
     border: none;
+    border-left: 1px solid #d4c4b8;
+    border-right: 1px solid #d4c4b8;
     border-radius: 0;
     text-align: center;
-    width: 80px;
+    width: 72px;
     font-size: 20px;
-    font-weight: 700;
-    color: var(--secondary-color);
-    background: transparent;
+    font-weight: 600;
+    color: #6D3F21;
+    background: #fff;
     box-shadow: none;
     padding: 12px 8px;
     -moz-appearance: textfield;
+    font-family: 'Cormorant Garamond', serif;
 }
 
 .guests_selector input[type="number"]::-webkit-outer-spin-button,
@@ -241,16 +285,17 @@
     background: #efe6dd;
     border: none;
     padding: 12px 20px;
-    font-size: 22px;
-    font-weight: 700;
-    color: var(--secondary-color);
+    font-size: 20px;
+    font-weight: 600;
+    color: #6D3F21;
     cursor: pointer;
     transition: background 0.2s ease, color 0.2s ease;
     line-height: 1;
+    font-family: 'Jost', sans-serif;
 }
 
 .guests_btn:hover {
-    background: var(--secondary-color);
+    background: #6D3F21;
     color: #fff;
 }
 
@@ -258,12 +303,15 @@
 .submit_btn {
     width: 100%;
     padding: 16px;
-    background: var(--secondary-color);
+    background: #6D3F21;
     color: #fff;
-    border: 3px solid transparent;
-    border-radius: 50px;
-    font-size: 18px;
-    font-weight: 700;
+    border: 1.5px solid #6D3F21;
+    border-radius: 0;
+    font-family: 'Jost', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 3px;
+    text-transform: uppercase;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -271,17 +319,32 @@
     gap: 10px;
     transition: all 0.4s ease;
     margin-top: 8px;
-    font-family: "Inter", sans-serif;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
 }
 
-.submit_btn i {
-    font-size: 22px;
+.submit_btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: #a67b5b;
+    transform: translateX(-101%);
+    transition: transform 0.4s ease;
+    z-index: -1;
 }
 
 .submit_btn:hover {
-    background: transparent;
-    border-color: var(--secondary-color);
-    color: var(--secondary-color);
+    border-color: #a67b5b;
+    color: #fff;
+}
+
+.submit_btn:hover::before {
+    transform: translateX(0);
+}
+
+.submit_btn i {
+    font-size: 18px;
 }
 
 /* Responsive */
@@ -296,7 +359,7 @@
     }
 
     .reservation_hero_overlay h1 {
-        font-size: 32px;
+        font-size: 36px;
     }
 }
 
@@ -306,10 +369,14 @@
     }
 
     .reservation_form_panel {
-        padding: 24px 20px;
+        padding: 28px 20px;
     }
 
     .reservation_hero {
         height: 200px;
+    }
+
+    .reservation_hero_overlay h1 {
+        font-size: 28px;
     }
 }
